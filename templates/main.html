@@ -5,7 +5,7 @@
 	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Python Programming Tutorial</title>
+		<title>Steganopic</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'bootstrap/css/bootstrap.min.css')}}">
@@ -20,7 +20,7 @@
 		<nav class="navbar navbar-light bg-light">
 			<a class="navbar-brand" href="#">
 				<img src="{{url_for('static',filename = 'img/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
-				Ejemplo de Flask
+				Steganopic
 			</a>
 		</nav>
 	</header>
@@ -28,17 +28,69 @@
 
 	<body>
 
-		<h1>Hi there how are you doin'</h1>
-		<p>Como estás?</p>
+		<div class="container">
+			<div class="row" style="margin-top: 5%;">
+
+				<!-- Codificar -->
+				<div class="col-6">
+					<h2 align="center">Codificar</h2>
+
+					<form style="margin-bottom: 3%" action="{{ url_for('try_encode') }}" method="post" enctype=multipart/form-data>
+
+						<div class="form-group">
+							<label for="message">Ingresa tu mensaje</label>
+							<input type="text" class="form-control" name="message" placeholder="Mensaje">
+						</div>
+
+						<div class="form-group">
+							<label for="image">Sube tu imagen</label>
+							<div class="col-12"></div>
+							<input type="file" name="image">
+						</div>
+
+						<button type="submit" class="btn btn-primary" align="center" value="Encode">Empezar</button>
+					</form>
+				</div>
+
+				<!-- Decodificar -->
+				<div class="col-6">
+					<h2 align="center">Decodificar</h2>
+					<form style="margin-bottom: 3%">
+
+						<div class="form-group">
+							<label for="image">Sube tu imagen</label>
+							<div class="col-12"></div>
+							<input type="file" name="pic" id="message" accept="image/jpeg">
+						</div>
+
+						<button type="submit" class="btn btn-primary" align="center">Empezar</button>
+					</form>
+
+					<p>Mensaje:	</p>
+				</div>
+
+
+				<p>{{error}}</p>
+
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+
 	</body>
-
-
-
-
-
-
-
-
 
 
 
