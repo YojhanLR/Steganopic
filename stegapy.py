@@ -9,6 +9,7 @@ import argparse
 from collections import deque
 
 from PIL import Image
+import PIL.Image
 
 
 class LoadingDone(Exception):
@@ -42,8 +43,7 @@ def encode(message, in_img, out_img="_stegaed.png"):
     for mes in message:
         bits.extend(split_by_two(mes))
 
-    image = Image.open(in_img).convert("RGBA")
-
+    image = Image.open('tests/toencode.jpg').convert("RGBA")
     try:
         for x in range(image.size[0]):
             for y in range(image.size[1]):

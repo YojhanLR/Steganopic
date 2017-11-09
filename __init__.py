@@ -1,6 +1,11 @@
 import os
 from flask import Flask, render_template, request, session,url_for, redirect, jsonify
 import stegapy
+from PIL import Image
+from PIL import PngImagePlugin
+import urllib
+import re
+import cStringIO
 
 
 UPLOAD_FOLDER = 'tests'
@@ -51,11 +56,11 @@ def try_encode():
 
                 if allowed_file(image.filename):
                     print('archivo valido')
-                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtoencode.jpg'))
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'toencode.jpg'))
                     print(' - Imagen guardada /tests')
 
                     img_out = stegapy.encode(message, image)
-                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finaldecoded.png'))
+                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'decoded.png'))
 
                     print(' - Imagen codificada lista.')
 
@@ -80,7 +85,7 @@ def try_decode():
                 image = request.files['image_up']
 
                 if allowed_file(image.filename):
-                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtodecode.jpg'))
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp.jpg'))
                     print(' - Imagen guardada /tests')
 
                     message = stegapy.decode(image)
@@ -117,6 +122,37 @@ def simple_ajax():
     }
 
     return jsonify(send_json)
+
+
+# Envia informacion basica en ajax, para tomar como ejemplo
+@app.route('/encode_image', methods=["POST"])
+def encode_image():
+    try:
+
+        if request.method == "POST":
+
+            # Guarda el objeto JSON enviado.
+            data = request.get_json()
+
+            message = data.get('message')
+            img64 = data.get('img64')
+
+            # borra metadata de data:image/jpeg..
+            image_data = re.sub('^data:image/.+;base64,', '', img64).decode('base64')
+            # abre la imagen a partir de la decodificacion anterior
+            image = Image.open(cStringIO.StringIO(image_data))
+            # guarda la imagen
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'toencode.jpg'))
+            print(' - Imagen guardada /tests')
+
+            img_out = stegapy.encode(message, image)
+            img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'decoded.png'))
+
+            return jsonify('Imagen codificada con exito')
+
+    except Exception as e:
+        print(e)
+        return jsonify('Error')
 
 
 # Run main
