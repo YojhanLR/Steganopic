@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, session,url_for, redirect
+from flask import Flask, render_template, request, session,url_for, redirect, jsonify
 import stegapy
 
 
@@ -17,6 +17,12 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Configuracion secret key para mantener session
 app.config['SECRET_KEY'] = SECRET_KEY = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1\xa8'
+
+
+# check if an extension is valid
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/')
@@ -41,20 +47,25 @@ def try_encode():
 
                 print ('Try to encode!')
                 message = request.form['message']
-
                 image = request.files['image']
-                image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtoencode.jpg'))
-                print(' - Imagen guardada /tests')
 
-                img_out = stegapy.encode(message, image)
-                img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finaldecoded.png'))
+                if allowed_file(image.filename):
+                    print('archivo valido')
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtoencode.jpg'))
+                    print(' - Imagen guardada /tests')
 
-                print(' - Imagen codificada lista.')
+                    img_out = stegapy.encode(message, image)
+                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finaldecoded.png'))
 
-                session['message_en'] = message
-                session['flag'] = True
+                    print(' - Imagen codificada lista.')
 
-                return redirect(url_for('homepage'))
+                    session['message_en'] = message
+                    session['flag'] = True
+
+                    return redirect(url_for('homepage'))
+
+                else:
+                    return render_template("main.html", error='Este tipo de archivo no es valido')
 
     except Exception as e:
         return render_template("main.html", error=e)
@@ -67,18 +78,27 @@ def try_decode():
         if request.method == "POST":
                 print ('Try to decode!')
                 image = request.files['image_up']
-                image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtodecode.jpg'))
-                print(' - Imagen guardada /tests')
 
-                message = stegapy.decode(image)
-                session['message_de'] = message
-                session['flag'] = True
+                if allowed_file(image.filename):
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imgtodecode.jpg'))
+                    print(' - Imagen guardada /tests')
 
+                    message = stegapy.decode(image)
+                    session['message_de'] = message
+                    session['flag'] = True
 
-                return redirect(url_for('homepage'))
+                    return redirect(url_for('homepage'))
+
+                else:
+                    return render_template("main.html", error='Este tipo de archivo no es valido')
 
     except Exception as e:
         return render_template("main.html", error=e)
+
+
+@app.route('/showMessage', methods=["GET", "POST"])
+def showMessage():
+    print ('hola')
 
 
 if __name__ == "__main__":
