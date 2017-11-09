@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'bootstrap/css/bootstrap.min.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'mycss.css')}}">
 		<!-- Favicon.ico -->
 		<link rel="short icon" type="text/css" href="{{url_for('static',filename = 'favicon.ico')}}">
 	</head>
@@ -32,7 +33,7 @@
 			<div class="row" style="margin-top: 5%;">
 
 				<!-- Codificar -->
-				<div class="col-6">
+				<div class="col-6 line">
 					<h2 align="center">Codificar</h2>
 
 					<form style="margin-bottom: 3%" action="{{ url_for('try_encode') }}" method="post" enctype=multipart/form-data>
@@ -51,8 +52,8 @@
 						<button type="submit" class="btn btn-primary" align="center" value="Encode">Empezar</button>
 					</form>
 
-					{% if message_en %}
-					<p>Mensaje codificado:	{{message_en}}</p>
+					{% if session['message_en'] %}
+					<p>Mensaje decodificado:	{{ session['message_en'] }}</p>
 					{% endif %}
 				</div>
 
@@ -69,8 +70,8 @@
 
 						<button type="submit" class="btn btn-primary" align="center" value="decode">Empezar</button>
 					</form>
-					{% if message_de %}
-					<p>Mensaje decodificado:	{{message_de}}</p>
+					{% if session['message_de'] %}
+					<p>Mensaje decodificado:	{{ session['message_de'] }}</p>
 					{% endif %}
 				</div>
 

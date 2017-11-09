@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, session,url_for, redirect
 import stegapy
 
 
@@ -13,19 +13,32 @@ def allowed_file(filename):
 
 
 app = Flask(__name__)
+# Configuracion de carpeta de upload
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# Configuracion secret key para mantener session
+app.config['SECRET_KEY'] = SECRET_KEY = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1\xa8'
 
 
 @app.route('/')
 def homepage():
-    return render_template("main.html")
+    try:
+        if session['flag']:
+            print('Hay valor.')
+            session.pop('flag', None)
+            return render_template("main.html")
+
+    except Exception as e:
+        print ('No encontro variable')
+        session.clear()
+        return render_template("main.html")
 
 
-@app.route('/enc', methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def try_encode():
     try:
 
         if request.method == "POST":
+
                 print ('Try to encode!')
                 message = request.form['message']
 
@@ -37,7 +50,11 @@ def try_encode():
                 img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finaldecoded.png'))
 
                 print(' - Imagen codificada lista.')
-                return render_template("main.html", message_en=message)
+
+                session['message_en'] = message
+                session['flag'] = True
+
+                return redirect(url_for('homepage'))
 
     except Exception as e:
         return render_template("main.html", error=e)
@@ -54,8 +71,11 @@ def try_decode():
                 print(' - Imagen guardada /tests')
 
                 message = stegapy.decode(image)
+                session['message_de'] = message
+                session['flag'] = True
 
-                return render_template("main.html", message_de=message)
+
+                return redirect(url_for('homepage'))
 
     except Exception as e:
         return render_template("main.html", error=e)
