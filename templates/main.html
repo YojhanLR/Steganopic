@@ -45,33 +45,36 @@
 						<div class="form-group">
 							<label for="image">Sube tu imagen</label>
 							<div class="col-12"></div>
-							<input type="file" name="image">
+							<input type="file" name="image" accept="image/jpeg">
 						</div>
 
 						<button type="submit" class="btn btn-primary" align="center" value="Encode">Empezar</button>
 					</form>
+
+					{% if message_en %}
+					<p>Mensaje codificado:	{{message_en}}</p>
+					{% endif %}
 				</div>
 
 				<!-- Decodificar -->
 				<div class="col-6">
 					<h2 align="center">Decodificar</h2>
-					<form style="margin-bottom: 3%">
 
+					<form style="margin-bottom: 3%" action="{{ url_for('try_decode') }}" method="post" enctype=multipart/form-data>
 						<div class="form-group">
-							<label for="image">Sube tu imagen</label>
+							<label for="image_up">Sube tu imagen</label>
 							<div class="col-12"></div>
-							<input type="file" name="pic" id="message" accept="image/jpeg">
+							<input type="file" name="image_up">
 						</div>
 
-						<button type="submit" class="btn btn-primary" align="center">Empezar</button>
+						<button type="submit" class="btn btn-primary" align="center" value="decode">Empezar</button>
 					</form>
-
-					<p>Mensaje:	</p>
+					{% if message_de %}
+					<p>Mensaje decodificado:	{{message_de}}</p>
+					{% endif %}
 				</div>
 
-
 				<p>{{error}}</p>
-
 
 			</div>
 		</div>

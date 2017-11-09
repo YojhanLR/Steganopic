@@ -90,6 +90,8 @@ def decode(img):
 
     print("Length:", length)
     print("Message:", message)
+
+    return message
     
     
 
