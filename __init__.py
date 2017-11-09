@@ -96,10 +96,29 @@ def try_decode():
         return render_template("main.html", error=e)
 
 
-@app.route('/showMessage', methods=["GET", "POST"])
-def showMessage():
-    print ('hola')
+# Envia informacion basica en ajax, para tomar como ejemplo
+@app.route('/simple_ajax', methods=["POST"])
+def simple_ajax():
+
+    # Guarda el objeto JSON enviado.
+    data = request.get_json()
+
+    name = data.get('name')
+    message = data.get('message')
+    idnumber = 2
+
+    print ('Nombre: %s' % name)
+    print ('Mensaje: %s' % message)
+
+    send_json = {
+        'name': 'Este es mi nombre: %s ' % name,
+        'message': 'Este es mi mensaje: %s ' % message,
+        'id': idnumber
+    }
+
+    return jsonify(send_json)
 
 
+# Run main
 if __name__ == "__main__":
     app.run()
