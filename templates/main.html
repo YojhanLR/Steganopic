@@ -51,6 +51,10 @@
 
 						<button type="submit" class="btn btn-primary" align="center" value="Encode">Empezar</button>
 					</form>
+
+					{% if session['message_en'] %}
+					<p>Se ha guardado el mensaje en la imagen</p>
+					{% endif %}
 				</div>
 
 				<!-- Decodificar -->

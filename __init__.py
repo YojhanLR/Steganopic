@@ -1,20 +1,13 @@
 import os
-from flask import Flask, render_template, request, session,url_for, redirect, jsonify
+from flask import Flask, render_template, request, session, url_for, redirect, jsonify
 import stegapy
 from PIL import Image
-from PIL import PngImagePlugin
-import urllib
 import re
 import cStringIO
 
-
+# Ubicacion carpeta de descargas llamada 'tests'
 UPLOAD_FOLDER = 'tests'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 app = Flask(__name__)
@@ -24,12 +17,17 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY = '\xfd{H\xe5<\x95\xf9\xe3\x96.5\xd1\x01O<!\xd5\xa2\xa0\x9fR"\xa1\xa8'
 
 
-# check if an extension is valid
+# checkea si una extension es validad
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
+#                     #
+#     Version WEB     #
+#                     #
+
+#
 @app.route('/')
 def homepage():
     try:
@@ -56,11 +54,11 @@ def try_encode():
 
                 if allowed_file(image.filename):
                     print('archivo valido')
-                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'toencode.jpg'))
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'to_encode.jpg'))
                     print(' - Imagen guardada /tests')
 
                     img_out = stegapy.encode(message, image)
-                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'decoded.png'))
+                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finished_coded.png'))
 
                     print(' - Imagen codificada lista.')
 
@@ -85,7 +83,7 @@ def try_decode():
                 image = request.files['image_up']
 
                 if allowed_file(image.filename):
-                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp.jpg'))
+                    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp.png'))
                     print(' - Imagen guardada /tests')
 
                     message = stegapy.decode(image)
@@ -100,6 +98,10 @@ def try_decode():
     except Exception as e:
         return render_template("main.html", error=e)
 
+
+#                       #
+#     Version Movil     #
+#                       #
 
 # Envia informacion basica en ajax, para tomar como ejemplo
 @app.route('/simple_ajax', methods=["POST"])
@@ -124,12 +126,13 @@ def simple_ajax():
     return jsonify(send_json)
 
 
-# Envia informacion basica en ajax, para tomar como ejemplo
+# Codifica la imagen!
 @app.route('/encode_image', methods=["POST"])
 def encode_image():
     try:
 
         if request.method == "POST":
+            print('1. Inicia codificacion')
 
             # Guarda el objeto JSON enviado.
             data = request.get_json()
@@ -142,13 +145,41 @@ def encode_image():
             # abre la imagen a partir de la decodificacion anterior
             image = Image.open(cStringIO.StringIO(image_data))
             # guarda la imagen
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'toencode.jpg'))
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'to_encode.jpg'))
             print(' - Imagen guardada /tests')
 
             img_out = stegapy.encode(message, image)
-            img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'decoded.png'))
+            img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finished_coded.png'))
 
-            return jsonify('Imagen codificada con exito')
+            with open("tests/finished_coded.png", "rb") as f:
+                data = f.read()
+                base64str = data.encode("base64")
+                print("Imagen codificada con exito. Envio imagen")
+
+            send_json = {
+                'flag': 'Llego base64str',
+                'base64str': base64str
+            }
+
+            return jsonify(send_json)
+
+    except Exception as e:
+        print(e)
+        return jsonify('Error')
+
+
+# Decodifica la imagen!
+@app.route('/decode_image', methods=["POST"])
+def decode_image():
+    try:
+        if request.method == "POST":
+            print('2. Inicia decodificacion')
+
+            send_json = {
+                'flag': 'Llego mensaje desencriptado'
+            }
+
+            return jsonify(send_json)
 
     except Exception as e:
         print(e)

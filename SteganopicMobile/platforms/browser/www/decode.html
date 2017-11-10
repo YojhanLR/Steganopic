@@ -25,33 +25,29 @@
 <body>
 	<script type="text/javascript" src="cordova.js"></script>
 
-<!-- Codificar -->
+<!-- Decodificar -->
 	<div class="col-12"  style="margin-top: 5%">
-		<h2 align="center">Codificar</h2>
+		<h2 align="center">Decodificar</h2>
 
 		<form style="margin-bottom: 3%">
-			<div class="form-group">
-				<label for="ipt_message">Ingresa tu mensaje</label>
-				<input type="text" class="form-control" id="ipt_message" placeholder="Mensaje">
-			</div>
 
 			<div class="form-group">
-				<label for="ipt_image">Sube tu imagen</label>
+				<label for="ipt_imagetodec">Sube tu imagen</label>
 				<div class="col-12"></div>
-				<input type="file" id="ipt_image" onchange="encodeImageFileAsURL(this)"   accept="image/jpeg">
+				<input type="file" id="ipt_imagetodec" onchange="encodeImageFileAsURL(this)"   accept="image/png">
 			</div>
 
 		</form>
 	</div>
 
 	<div class="col-12" align="center">
-		<button type="submit" class="btn btn-primary" align="center" id="btn_encode">¡Codificar mensaje!</button>
+		<button type="submit" class="btn btn-primary" align="center" id="btn_decode">¡Descubre tu mensaje!</button>
 	</div>
 
 	<div class="col-12" style="margin-top: 10%" align="center">
 
-		<div id="imgContainer" class="img-thumbnail"  style="display: none"> </div>
-		<p id= "imgMessage" style="display: none">	¡Descarga tu imagen con tu mensaje encriptado!</p>
+		<div id="imgContainerdec" class="img-thumbnail"  style="display: none"> </div>
+		<p id= "imgMessagedec" style="display: none"></p>
 	</div>
 <!--  -->
 

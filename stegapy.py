@@ -28,7 +28,7 @@ def split_by_two(string):
             for i in range(0, len(string), 2)]
 
 
-def encode(message, in_img, out_img="_stegaed.png"):
+def encode(message, in_img, out_img="coded.png"):
     print("Encoding ({}): {}".format(len(message), message))
 
     if len(message) > 255:
@@ -43,7 +43,7 @@ def encode(message, in_img, out_img="_stegaed.png"):
     for mes in message:
         bits.extend(split_by_two(mes))
 
-    image = Image.open('tests/toencode.jpg').convert("RGBA")
+    image = Image.open('tests/to_encode.jpg').convert("RGBA")
     try:
         for x in range(image.size[0]):
             for y in range(image.size[1]):
