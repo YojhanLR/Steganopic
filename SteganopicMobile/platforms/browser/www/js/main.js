@@ -50,16 +50,8 @@ $("#btn_decode").on("click",function(){
         contentType: 'application/json;charset=UTF-8',
 		success: function(result){
 			console.log(result)
-
-			/*var src = "data:image/png;base64,";
-			src += result.base64str;
-
-			var newImage = document.createElement('img');
-			newImage.src = src;
-			newImage.width = newImage.height = "180";
-			document.querySelector('#imgContainer').innerHTML = newImage.outerHTML;//where to insert your image
-			document.getElementById("imgContainer").style.display = "block";
-			document.getElementById('imgMessage').style.display = "block";*/
+			document.getElementById("imgMessagedec").style.display = "block";
+			document.getElementById("imgMessagedec").innerHTML = "El mensaje codificado es: "+result.message;
 		}
 	});
 });

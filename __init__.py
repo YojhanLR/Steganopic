@@ -175,8 +175,24 @@ def decode_image():
         if request.method == "POST":
             print('2. Inicia decodificacion')
 
+            # Guarda el objeto JSON enviado.
+            data = request.get_json()
+            img64 = data.get('img64')
+
+            # borra metadata de data:image/png..
+            image_data = re.sub('^data:image/.+;base64,', '', img64).decode('base64')
+            # abre la imagen a partir de la decodificacion anterior
+            image = Image.open(cStringIO.StringIO(image_data))
+            # guarda la imagen
+            image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp.png'))
+            print(' - Imagen guardada /tests')
+
+            message = stegapy.decode(image)
+            print(message)
+
             send_json = {
-                'flag': 'Llego mensaje desencriptado'
+                'flag': 'Llego mensaje desencriptado',
+                'message': message
             }
 
             return jsonify(send_json)

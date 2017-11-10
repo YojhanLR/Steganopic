@@ -63,7 +63,7 @@ def decode(img):
 
     bits = []
     length = None
-    image = Image.open(img)
+    image = Image.open('tests/temp.png')
     try:
         for x in range(image.size[0]):
             for y in range(image.size[1]):
