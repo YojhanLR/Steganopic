@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from Tkinter import *
 from stegapy import decode, encode
 
@@ -12,7 +14,7 @@ import sys
 from tkFileDialog   import askopenfilename
 from tkFileDialog   import asksaveasfile
 from PIL import Image
-
+from ScrolledText import *
 
 
 
@@ -21,6 +23,8 @@ vent = Tk()
 vent.geometry("500x300")
 #titulo de la ventana1
 vent.title("Proyecto de Fourier")
+#scrollbar texto
+
 
 
 #-------------------------------
@@ -44,29 +48,31 @@ def abrirventana2():
     #lbl1 = Label(vent2,text=".JPG").place(x=240, y=70)
 
 
+
     lblMensaje = Label(vent2,text="Ingrese el mensaje a ocultar: ").place(x=50, y=80)
     entrada = StringVar()
-    txtArchivo = Entry(vent2, textvariable=entrada,width=60).place(x=50, y=120)
+    txtArchivo = Entry(vent2, textvariable='entrada',width=60).place(x=50, y=120)
 
 
     lblNuevo = Label(vent2,text="Ingrese el nombre del nuevo archivo: ").place(x=50, y=150)
     entradaNu = StringVar()
     txtNuevo = Entry(vent2, textvariable=entradaNu,width=30).place(x=50, y=170)
-    lbl3 = Label(vent2,text=".PNG").place(x=240, y=170)
+    #lbl3 = Label(vent2,text=".PNG").place(x=240, y=170)
+
 
 
 
     def stegano():
                     
         info = entrada.get()
-        lblMensaje1 = Label(vent2,text= entrada.get()).place(x=200, y=0)
+        #lblMensaje1 = Label(vent2,text= entrada.get()).place(x=200, y=0)
             
              
         img_stegana = askopenfilename(filetypes=[("Imagem PNG","*.jpg")])
         print img_stegana
         encode(entrada.get(),img_stegana,entradaNu.get()+".png")
         #encode(entrada.get(),"",entradaNu.get()+".png")
-        lblMensajeS = Label(vent2,text= "El mensaje ha sido guardado con éxito!!").place(x=50, y=240)
+        lblMensajeS = Label(vent2,text= "La nueva imagen con el mensaje ha sido guardada con éxito!!").place(x=50, y=240)
 
     def regresar():
         #cierro la ventana 2 Y REGRESO 
@@ -114,8 +120,18 @@ def abrirventana3():
         
         decode(img_steg)
         a = decode(img_steg)
+
+        textPad = ScrolledText(vent3, width=30, height=10)
+
+        textPad.pack()
+
+
+
+
+        textPad.insert(INSERT, "El mensaje oculto es: \n\n"  + a )
+        textPad.place(x=50, y=100)
         
-        lbl3 = Label(vent3,text="El mensaje oculto es: '" + a + "'").place(x=50, y=100)
+        #lbl3 = Label(vent3,text="El mensaje oculto es: '" + a + "'").place(x=50, y=100)
 
 
     def regresar2():
