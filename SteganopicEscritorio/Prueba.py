@@ -2,12 +2,8 @@
 
 from Tkinter import *
 from stegapy import decode, encode
-
-
-#importamos la opciÛn para seleccionar archivos
+#importamos la opci√≥n para seleccionar archivos
 import Tkinter, Tkconstants, tkFileDialog
-
-
 import sys
 
 
@@ -19,7 +15,7 @@ from ScrolledText import *
 
 
 vent = Tk()
-#tamaÒo a la vntana geometry()
+#tama√±o a la vntana geometry()
 vent.geometry("500x300")
 #titulo de la ventana1
 vent.title("Proyecto de Fourier")
@@ -41,38 +37,36 @@ def abrirventana2():
     #titulo de la ventana2
     vent2.title("Proyecto de Fourier")
 
-    lblAnuncio = Label(vent2,text="Selecciona el archivo que ocultar· tu mensaje y luego dale un nuevo nombre " ).place(x=50, y=40)
+    lblAnuncio = Label(vent2,text="Selecciona el archivo que ocultar√° tu mensaje y luego dale un nuevo nombre " ).place(x=50, y=40)
     #lblNombre = Label(vent2,text="Ingrese el nombre del archivo en donde vas a guardar el mensaje: ").place(x=50, y=50)
     #entradaN = StringVar()
     #txtNombre = Entry(vent2, textvariable=entradaN,width=30).place(x=50, y=70)
     #lbl1 = Label(vent2,text=".JPG").place(x=240, y=70)
 
 
-
     lblMensaje = Label(vent2,text="Ingrese el mensaje a ocultar: ").place(x=50, y=80)
     entrada = StringVar()
-    txtArchivo = Entry(vent2, textvariable='entrada',width=60).place(x=50, y=120)
+    txtArchivo = Entry(vent2, textvariable=entrada,width=60).place(x=50, y=120)
 
 
     lblNuevo = Label(vent2,text="Ingrese el nombre del nuevo archivo: ").place(x=50, y=150)
     entradaNu = StringVar()
     txtNuevo = Entry(vent2, textvariable=entradaNu,width=30).place(x=50, y=170)
-    #lbl3 = Label(vent2,text=".PNG").place(x=240, y=170)
-
+    lbl3 = Label(vent2,text=".PNG").place(x=240, y=170)
 
 
 
     def stegano():
                     
         info = entrada.get()
-        #lblMensaje1 = Label(vent2,text= entrada.get()).place(x=200, y=0)
+        lblMensaje1 = Label(vent2,text= entrada.get()).place(x=200, y=0)
             
              
         img_stegana = askopenfilename(filetypes=[("Imagem PNG","*.jpg")])
         print img_stegana
         encode(entrada.get(),img_stegana,entradaNu.get()+".png")
         #encode(entrada.get(),"",entradaNu.get()+".png")
-        lblMensajeS = Label(vent2,text= "La nueva imagen con el mensaje ha sido guardada con Èxito!!").place(x=50, y=240)
+        lblMensajeS = Label(vent2,text= "El mensaje ha sido guardado con √©xito!!").place(x=50, y=240)
 
     def regresar():
         #cierro la ventana 2 Y REGRESO 
@@ -83,7 +77,7 @@ def abrirventana2():
     
         
         
-    #BotÛn ocultar mensaje
+    #Bot√≥n ocultar mensaje
     btnOcultar = Button(vent2,text="Ocultar mensaje",command = stegano).place(x=50, y=200)
 
     btnRegresar = Button(vent2,text="Regresar", command = regresar).place(x=400, y=250)
@@ -122,11 +116,7 @@ def abrirventana3():
         a = decode(img_steg)
 
         textPad = ScrolledText(vent3, width=30, height=10)
-
         textPad.pack()
-
-
-
 
         textPad.insert(INSERT, "El mensaje oculto es: \n\n"  + a )
         textPad.place(x=50, y=100)
@@ -140,7 +130,7 @@ def abrirventana3():
         vent.deiconify()        
              
     
-    #BotÛn mostrar mensaje
+    #Bot√≥n mostrar mensaje
     btnM = Button(vent3,text="Seleccione el archivo",command = decodi).place(x=50, y=40)
 
     btnRegresar = Button(vent3,text="Regresar", command = regresar2).place(x=400, y=250)
