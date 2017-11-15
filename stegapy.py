@@ -43,7 +43,7 @@ def encode(message, in_img, out_img="coded.png"):
     for mes in message:
         bits.extend(split_by_two(mes))
 
-    image = Image.open('tests/to_encode.jpg').convert("RGBA")
+    image = Image.open('static/tests/to_encode.jpg').convert("RGBA")
     try:
         for x in range(image.size[0]):
             for y in range(image.size[1]):
@@ -63,7 +63,7 @@ def decode(img):
 
     bits = []
     length = None
-    image = Image.open('tests/temp.png')
+    image = Image.open('static/tests/temp.png')
     try:
         for x in range(image.size[0]):
             for y in range(image.size[1]):

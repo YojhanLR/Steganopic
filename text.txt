@@ -1,0 +1,1 @@
+C:\Users\Yojha\AppData\Local\Android\Sdk\tools\emulator.exe -netdelay none -netspeed full -avd Nexus_5X

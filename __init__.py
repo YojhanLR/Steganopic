@@ -6,7 +6,7 @@ import re
 import cStringIO
 
 # Ubicacion carpeta de descargas llamada 'tests'
-UPLOAD_FOLDER = 'tests'
+UPLOAD_FOLDER = 'static/tests'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 
@@ -58,7 +58,7 @@ def try_encode():
                     print(' - Imagen guardada /tests')
 
                     img_out = stegapy.encode(message, image)
-                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finished_coded.png'))
+                    img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imagen_final.png'))
 
                     print(' - Imagen codificada lista.')
 
@@ -149,9 +149,9 @@ def encode_image():
             print(' - Imagen guardada /tests')
 
             img_out = stegapy.encode(message, image)
-            img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'finished_coded.png'))
+            img_out.save(os.path.join(app.config['UPLOAD_FOLDER'], 'imagen_final.png'))
 
-            with open("tests/finished_coded.png", "rb") as f:
+            with open("static/tests/imagen_final.png", "rb") as f:
                 data = f.read()
                 base64str = data.encode("base64")
                 print("Imagen codificada con exito. Envio imagen")
