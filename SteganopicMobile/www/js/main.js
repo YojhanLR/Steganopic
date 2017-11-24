@@ -1,6 +1,8 @@
-urlCall = 'http://10.0.2.2:5000';
+//urlCall = 'http://10.0.2.2:5000';
 //urlCall =  'http://127.0.0.1:5000';
 
+//Genymotion
+urlCall =  'http://10.0.3.2:5000';
 
 $("#btn_encode").on("click",function(){
 
@@ -92,6 +94,14 @@ function AjaxCallDecode (urlCall, data){
                 }  
 	});
 }
+
+function descargar(){
+	console.log("Vamos a descargar")
+	downloadFile(urlCall+'/static/tests/imagen_final.png')
+}
+
+
+
 
 
 

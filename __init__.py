@@ -74,7 +74,7 @@ def try_encode():
         return render_template("main.html", error=e)
 
 
-@app.route('/dec', methods=["GET", "POST"])
+@app.route('/dec', methods=["GET", "POST"]) 
 def try_decode():
     try:
 
