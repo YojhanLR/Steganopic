@@ -12,6 +12,7 @@ function downloadFile(URL) {
     function fileSystemSuccess(fileSystem) {
         var download_link = encodeURI(URL);
         fileName = download_link.substr(download_link.lastIndexOf('/') + 1); //Get filename of URL
+        console.log("Lo que aparecio: "+fileName)
         var directoryEntry = fileSystem.root; // to get root path of directory
         directoryEntry.getDirectory(folderName, {
             create: true,
@@ -23,6 +24,7 @@ function downloadFile(URL) {
         var fp = fileSystem.root.toNativeURL(); // Returns Fullpath of local directory*/
 
         //fp = fp + "/" + folderName + "/" + fileName; // fullpath and name of the file which we want to give
+        var download_link = encodeURI(URL);
         var fp = "/sdcard/Download/" + fileName; // fullpath and name of the file which we want to give
         console.log("File path: "+fp)
         // download function call

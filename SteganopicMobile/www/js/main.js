@@ -4,6 +4,8 @@
 //Genymotion
 urlCall =  'http://10.0.3.2:5000';
 
+
+
 $("#btn_encode").on("click",function(){
 
 	//console.log('RESULT', readerResult.result)
@@ -19,7 +21,7 @@ $("#btn_encode").on("click",function(){
 
 $("#btn_decode").on("click",function(){
 
-	//console.log('RESULT', readerResult.result)
+	console.log('RESULT', readerResult.result)
 	console.log('2. Voy imagen para desencriptar!')
 
 	var data = {
@@ -32,15 +34,19 @@ $("#btn_decode").on("click",function(){
 });
 
 
-var readerResult;
+
+var readerResult = new FileReader();
 function encodeImageFileAsURL(element) {
+  
   var file = element.files[0];
   var reader = new FileReader();
   reader.onloadend = function() {
-    console.log('Image in base64')
+    console.log('Image in base64');
+    //console.log(reader);
     readerResult = reader;
   }
   reader.readAsDataURL(file);
+  //console.log("aqui")
 }
 
 
@@ -64,7 +70,7 @@ function AjaxCallEncode (urlCall, data){
 			document.getElementById("linkDownload").appendChild(newImage)
 			document.getElementById("imgContainer").style.display = "block";
 			document.getElementById('imgMessage').style.display = "block";
-			document.getElementById("linkDownload").href=urlCall+'/static/tests/imagen_final.png'; 
+			document.getElementById("linkDownload").href=urlCall+'/static/tests/final.png'; 
 			
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -97,7 +103,7 @@ function AjaxCallDecode (urlCall, data){
 
 function descargar(){
 	console.log("Vamos a descargar")
-	downloadFile(urlCall+'/static/tests/imagen_final.png')
+	downloadFile(urlCall+'/static/tests/final.png')
 }
 
 
