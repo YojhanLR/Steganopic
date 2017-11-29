@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68f54673-c09d-4551-93ce-3f4e925e7e61" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/tests/imagen_final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SteganopicEscritorio/img jpg/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SteganopicEscritorio/img jpg/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SteganopicEscritorio/img jpg/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SteganopicEscritorio/img jpg/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SteganopicEscritorio/img jpg/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/tests/final.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/tests/temp.png" afterPath="$PROJECT_DIR$/static/tests/temp.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/tests/to_encode.jpg" afterPath="$PROJECT_DIR$/static/tests/to_encode.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/decode.html" afterPath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/decode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/js/downloadimage.js" afterPath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/js/downloadimage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/js/main.js" afterPath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/www/decode.html" afterPath="$PROJECT_DIR$/SteganopicMobile/www/decode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/www/js/downloadimage.js" afterPath="$PROJECT_DIR$/SteganopicMobile/www/js/downloadimage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/www/js/main.js" afterPath="$PROJECT_DIR$/SteganopicMobile/www/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/encode.html" afterPath="$PROJECT_DIR$/SteganopicMobile/platforms/browser/www/encode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SteganopicMobile/www/encode.html" afterPath="$PROJECT_DIR$/SteganopicMobile/www/encode.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,14 +26,12 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-130">
-              <caret line="151" column="68" lean-forward="false" selection-start-line="151" selection-start-column="68" selection-end-line="151" selection-end-column="68" />
+            <state relative-caret-position="16">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#626#722#0" expanded="false" />
                 <element signature="e#836#1121#0" expanded="false" />
-                <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-                <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,6 +63,8 @@
     <findStrings>
       <find>decoded.png</find>
       <find>decode</find>
+      <find>final</find>
+      <find>final.png</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -122,7 +122,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,6 +144,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -211,25 +211,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16490166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18986385" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31907895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31743422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -243,7 +244,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/coded.png" />
     <entry file="file://$PROJECT_DIR$/tests/finished_coded.png" />
     <entry file="file://$PROJECT_DIR$/stegapy.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -255,11 +255,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/tests/imagen_final.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/tests/imagen_final.png" />
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -268,8 +264,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -282,8 +276,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -306,8 +298,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -330,8 +320,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -354,8 +342,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -369,8 +355,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -383,8 +367,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -407,8 +389,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -431,8 +411,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -455,8 +433,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -469,8 +445,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -493,8 +467,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -517,8 +489,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -543,8 +513,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -567,8 +535,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
@@ -624,16 +590,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/tests/final.png" />
+    <entry file="file://$PROJECT_DIR$/SteganopicMobile/platforms/browser/cordova/node_modules/cordova-serve/node_modules/express/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="151" column="68" lean-forward="false" selection-start-line="151" selection-start-column="68" selection-end-line="151" selection-end-column="68" />
+        <state relative-caret-position="16">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#626#722#0" expanded="false" />
             <element signature="e#836#1121#0" expanded="false" />
-            <marker date="1511654989901" expanded="false" signature="2239:2977" ph="..." />
-            <marker date="1511654989901" expanded="false" signature="3182:3583" ph="..." />
           </folding>
         </state>
       </provider>
